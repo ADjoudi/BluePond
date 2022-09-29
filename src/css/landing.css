@@ -1,0 +1,42 @@
+.landing .item {
+  position: relative;
+  display: flex;
+  width: min-content;
+  overflow: hidden;
+  width: 13.875rem;
+  height: 17.5rem;
+}
+.landing .item .information {
+  width: 80%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: hsla(0, 0%, 100%, 0.8);
+  padding: 1rem 0rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+.landing .item .information h2 {
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+.landing .item .information h3 {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.landing .item img {
+  width: 13.875rem;
+  height: 17.5rem;
+}
+
+.landing {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr));
+  gap: 3rem;
+  padding: 4rem 2rem;
+}
