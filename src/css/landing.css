@@ -20,6 +20,11 @@
   padding: 1rem 0rem;
   border: none;
   border-radius: 0.5rem;
+  visibility: hidden;
+}
+.landing .item:hover .information {
+  visibility: visible;
+  cursor: pointer;
 }
 .landing .item .information h2 {
   font-weight: 500;
