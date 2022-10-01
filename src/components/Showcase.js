@@ -6,19 +6,23 @@ import bookmark from "../assets/bookmark.svg";
 import starFilled from "../assets/star-filled.svg";
 import starHalfFilled from "../assets/star-half-filled.svg";
 import starEmpty from "../assets/star-empty.svg";
+import { Link } from "react-router-dom";
 
 export default function Showcase(props) {
+  let { productName, productImage } = props.item;
   return (
     <div className="showcase">
-      <div className="back">
-        <img src={back} alt="<-" />
-        <h3>Go Back</h3>
-      </div>
+      <Link to="/">
+        <div className="back">
+          <img src={back} alt="<-" />
+          <h3>Go Back</h3>
+        </div>
+      </Link>
       <div className="item">
-        <img src={placeholder} alt={"product"} id="productImageShowcase" />
+        <img src={productImage} alt={"product"} id="productImageShowcase" />
         <div className="productInfo">
           <header>
-            <h1>Chair</h1>
+            <h1>{productName}</h1>
             <img src={bookmark} alt="bookmark" />
           </header>
           <p className="description">

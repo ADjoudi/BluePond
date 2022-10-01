@@ -6,6 +6,7 @@ import Landing from "./Landing";
 import Showcase from "./Showcase";
 import Cart from "./Cart";
 import placeholder from "../assets/placeholder.png";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App(props) {
   const [toggleCart, setToggleCart] = useState(false);
@@ -87,7 +88,15 @@ function App(props) {
     <div className="App">
       <SideNav />
       <Header handleCartClick={() => setToggleCart(true)} />
-      <Landing items={info} handleAddToCart={handleAddToCart} />
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={<Landing items={info} handleAddToCart={handleAddToCart} />}
+          />
+          <Route path="/product" element={<Showcase item={info[2]} />} />
+        </Routes>
+      </Router>
       {toggleCart && (
         <Cart
           handleExitClick={() => setToggleCart(false)}
