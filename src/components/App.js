@@ -4,9 +4,10 @@ import SideNav from "./SideNav";
 import Header from "./Header";
 import Landing from "./Landing";
 import Showcase from "./Showcase";
+import Checkout from "./Checkout";
 import Cart from "./Cart";
 import placeholder from "../assets/placeholder.png";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App(props) {
   const [toggleCart, setToggleCart] = useState(false);
@@ -86,26 +87,32 @@ function App(props) {
 
   return (
     <div className="App">
-      <SideNav />
-      <Header handleCartClick={() => setToggleCart(true)} />
       <Router>
+        <SideNav />
+        <Header handleCartClick={() => setToggleCart(true)} />
         <Routes>
           <Route
             path="/"
             element={<Landing items={info} handleAddToCart={handleAddToCart} />}
           />
-          <Route path="/product" element={<Showcase item={info[2]} />} />
+          <Route
+            path="/product"
+            element={
+              <Showcase item={info[2]} handleAddToCart={handleAddToCart} />
+            }
+          />
+          <Route path="/checkout" element={<Checkout cartList={cartList} />} />
         </Routes>
+        {toggleCart && (
+          <Cart
+            handleExitClick={() => setToggleCart(false)}
+            list={cartList}
+            handleAddSub={setCartList}
+            increment={increment}
+            decrement={decrement}
+          />
+        )}
       </Router>
-      {toggleCart && (
-        <Cart
-          handleExitClick={() => setToggleCart(false)}
-          list={cartList}
-          handleAddSub={setCartList}
-          increment={increment}
-          decrement={decrement}
-        />
-      )}
     </div>
   );
 }

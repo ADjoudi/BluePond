@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import exit from "../assets/exit.svg";
 import "../css/cart.css";
+import { Link } from "react-router-dom";
 
 function ItemCart(props) {
   let { id, productName, price, totalPrice, added } = props.info;
@@ -52,7 +53,9 @@ export default function Cart(props) {
           <h2>Total</h2>
           <h2>{total.toFixed(2)}</h2>
         </div>
-        <button>Proceed to Checkout</button>
+        <Link to="/checkout">
+          <button onClick={props.handleExitClick}>Proceed to Checkout</button>
+        </Link>
       </div>
     </div>
   );

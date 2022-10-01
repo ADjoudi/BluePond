@@ -1,0 +1,87 @@
+.checkout {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  overflow: auto;
+}
+.checkout .payment {
+  width: 19rem;
+  height: 22rem;
+  position: relative;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: 1px solid var(--outline-color);
+}
+.checkout .payment h1 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.checkout .payment .lock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #eeeeee60;
+}
+.checkout .payment .lock h3 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.checkout .checkoutCart {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 2rem;
+}
+.checkout .checkoutCart header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkout .checkoutCart header h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.checkout .checkoutCart header .total {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.checkout .checkoutCart .checkoutItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.checkout .checkoutCart .checkoutItems .checkoutItem {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+.checkout .checkoutCart .checkoutItems .checkoutItem .box {
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 3rem 0rem;
+  background-color: #d9d9d9;
+}
+.checkout .checkoutCart .checkoutItems .checkoutItem h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.checkout .checkoutCart .checkoutItems .checkoutItem h2:last-child {
+  margin-left: auto;
+  padding-right: 2rem;
+}

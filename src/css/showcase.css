@@ -9,6 +9,9 @@
   font-size: 0.75rem;
   font-weight: 500;
 }
+.showcase a {
+  text-decoration: none;
+}
 .showcase {
   padding: 2rem 0rem 0rem 2rem;
   display: flex;

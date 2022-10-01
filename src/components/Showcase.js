@@ -9,7 +9,7 @@ import starEmpty from "../assets/star-empty.svg";
 import { Link } from "react-router-dom";
 
 export default function Showcase(props) {
-  let { productName, productImage } = props.item;
+  let { id, productName, productImage } = props.item;
   return (
     <div className="showcase">
       <Link to="/">
@@ -44,7 +44,9 @@ export default function Showcase(props) {
           </div>
           <div className="action">
             <button>Buy Now</button>
-            <button>Add to Cart</button>
+            <button onClick={props.handleAddToCart} idkey={id}>
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
