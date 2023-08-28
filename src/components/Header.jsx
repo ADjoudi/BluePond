@@ -1,11 +1,10 @@
-import React from "react";
 import search from "../assets/search.svg";
 import profile from "../assets/profile.svg";
 import cart from "../assets/cart.svg";
-import "../css/header.css";
+import "../styles/header.scss";
 import { Link } from "react-router-dom";
 
-export default function Header(props) {
+export default function Header({ handleCartClick }) {
   return (
     <header className="header">
       <div className="nav">
@@ -28,7 +27,7 @@ export default function Header(props) {
       </div>
       <div className="user">
         <img src={profile} alt="profile" />
-        <img src={cart} alt="cart" onClick={props.handleCartClick} />
+        <img src={cart} alt="cart" onClick={handleCartClick} />
       </div>
     </header>
   );

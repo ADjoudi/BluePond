@@ -2,6 +2,7 @@
 
 :root {
   --dark-color: #292929;
+  --dark-color-op: #a7a7a7;
   --outline-color: #eeeeee;
 }
 
@@ -11,11 +12,9 @@
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
   color: var(--dark-color);
+  transition: all 0.2 ease;
 }
-body {
-  width: 100vw;
-  height: 100vh;
-}
+
 button {
   border: none;
   padding: 0.7rem 1.2rem;
