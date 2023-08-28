@@ -61,7 +61,7 @@ function Shop() {
   };
   return (
     <div className="page">
-      <SideNav />
+      <SideNav title="shop" />
       <Header
         isShop={true}
         nbrItems={cartList.length}

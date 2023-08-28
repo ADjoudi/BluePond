@@ -1,0 +1,23 @@
+.sidenav {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.75rem 1.75rem;
+  outline: 1px solid var(--outline-color);
+
+  .side-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 0.5rem;
+
+    h1 {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 300;
+      font-size: 4rem;
+    }
+  }
+}

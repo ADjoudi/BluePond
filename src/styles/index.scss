@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Montserrat:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;500&display=swap");
 :root {
   --dark-color: #292929;
   --dark-color-op: #a7a7a7;
@@ -23,4 +22,24 @@ button {
   width: 7.8rem;
   text-align: start;
   font-weight: 500;
+}
+
+.page {
+  display: grid;
+  grid-template-areas:
+    "sidenav header"
+    "sidenav content";
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content 1fr;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  .sidenav {
+    grid-area: sidenav;
+  }
+  .content {
+    grid-area: content;
+  }
 }

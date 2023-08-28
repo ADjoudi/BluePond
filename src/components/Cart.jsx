@@ -52,7 +52,7 @@ export default function Cart({
             ))}
         </div>
         <div className="totalArea">
-          <h2>Total</h2>
+          <h2>Total : </h2>
           <h2>${total.toFixed(2)}</h2>
         </div>
         <button onClick={handleExitClick}>Proceed to Checkout</button>

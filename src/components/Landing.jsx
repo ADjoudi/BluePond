@@ -3,6 +3,7 @@ import "../styles/landing.scss";
 import add from "../assets/add.svg";
 import check from "../assets/check.svg";
 import starFilled from "../assets/star-filled.svg";
+import click from "../assets/click.svg";
 
 function Item({ info, handleAddToCart, handleRemoveFromCart, cartList }) {
   const { id, productName, productImage, price, description } = info;
@@ -18,17 +19,17 @@ function Item({ info, handleAddToCart, handleRemoveFromCart, cartList }) {
       </div>
       <div className="information">
         <h2>{productName}</h2>
+        <img className="indicator" src={click} alt="" />
         <h3>{description}</h3>
-        <div className="info">
-          <div className="rating">
-            <img src={starFilled} alt="+" />
-            <img src={starFilled} alt="+" />
-            <img src={starFilled} alt="+" />
-            <img src={starFilled} alt="+" />
-            <img src={starFilled} alt="+" />
-          </div>
-          <h2>${price.toFixed(2)}</h2>
+
+        <div className="rating">
+          <img src={starFilled} alt="+" />
+          <img src={starFilled} alt="+" />
+          <img src={starFilled} alt="+" />
+          <img src={starFilled} alt="+" />
+          <img src={starFilled} alt="+" />
         </div>
+        <h2 className="price-item">${price.toFixed(2)}</h2>
       </div>
     </div>
   );
