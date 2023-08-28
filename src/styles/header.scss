@@ -12,7 +12,8 @@
   }
   .search,
   .user {
-    outline: 0.5px solid var(--outline-color);
+    border-bottom: 0.5px solid var(--outline-color);
+    border-right: 0.5px solid var(--outline-color);
     margin: 0.5px;
   }
   .nav {
@@ -22,8 +23,9 @@
     gap: 2.5rem;
     padding: 1.125rem 2rem;
     align-items: center;
+    border-bottom: 0.5px solid var(--outline-color);
 
-    h1:first-child {
+    h1:nth-child(2) {
       margin-right: auto;
       text-decoration: none;
     }
@@ -39,9 +41,11 @@
   .language {
     grid-area: lang;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
+    gap: 2rem;
     width: 18.625rem;
     padding: 1.125rem 2rem;
+    border-bottom: 0.5px solid var(--outline-color);
 
     h1 {
       font-weight: 500;
@@ -76,5 +80,24 @@
     justify-content: space-between;
     padding: 1.125rem 2rem;
     width: 18.625rem;
+    .cart-container {
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h4 {
+        min-width: 1.75rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-weight: 600;
+        font-size: 0.75rem;
+        color: white;
+        padding: 0.3rem 0.6rem;
+        background-color: black;
+        border-radius: 100%;
+      }
+    }
   }
 }

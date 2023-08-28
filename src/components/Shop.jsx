@@ -1,4 +1,4 @@
-import "../styles/App.scss";
+import "../styles/Shop.scss";
 import { useState } from "react";
 import SideNav from "./SideNav.jsx";
 import Header from "./Header";
@@ -8,7 +8,7 @@ import placeholder from "../assets/placeholder.png";
 
 import info from "./data";
 
-function App() {
+function Shop() {
   const [toggleCart, setToggleCart] = useState(false);
   const [cartList, setCartList] = useState([]);
 
@@ -60,9 +60,13 @@ function App() {
     });
   };
   return (
-    <div className="App">
+    <div className="page">
       <SideNav />
-      <Header handleCartClick={() => setToggleCart(true)} />
+      <Header
+        isShop={true}
+        nbrItems={cartList.length}
+        handleCartClick={() => setToggleCart(true)}
+      />
       {toggleCart && (
         <Cart
           handleExitClick={() => setToggleCart(false)}
@@ -82,4 +86,4 @@ function App() {
   );
 }
 
-export default App;
+export default Shop;
