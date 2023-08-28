@@ -5,7 +5,9 @@ function SideNav({ title = "" }) {
   const arr = title.toUpperCase().split("");
   return (
     <div className="sidenav">
-      <img src={logo} alt="BluePond" />
+      <div className="logo-container">
+        <img src={logo} alt="BluePond" />
+      </div>
       <div className="side-title">
         {arr.map((letter, index) => (
           <h1 key={index}>{letter}</h1>

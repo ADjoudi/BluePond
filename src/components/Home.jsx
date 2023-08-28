@@ -3,14 +3,25 @@ import Header from "./Header";
 import SideNav from "./SideNav";
 import heroImage from "../assets/hero-image.jpg";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 function Home() {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      document
+        .getElementsByClassName("hero-title")[0]
+        .classList.remove("hero-title-load");
+    }, 100);
+    return () => {
+      clearTimeout(timer);
+    };
+  });
   return (
     <div className="page">
       <SideNav title="home" />
       <Header isShop={false} />
       <div className="content-landing">
-        <h1>
+        <h1 className={"hero-title" + " " + "hero-title-load"}>
           Elevate Your Lifestyle{"\n"}
           With Luxury
         </h1>
