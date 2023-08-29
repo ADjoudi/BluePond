@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
+  overflow: auto;
 
   .back {
     display: flex;
@@ -21,6 +22,7 @@
   }
 
   .item {
+    flex: 1;
     width: calc(100% - 19.625rem);
     display: flex;
     flex-direction: row;
@@ -29,33 +31,38 @@
     justify-content: flex-start;
 
     #productImageShowcase {
-      width: 20.25rem;
-      height: 25.5rem;
+      flex: 1;
+      aspect-ratio: 1/1.26;
+      object-fit: cover;
     }
     .productInfo {
+      width: 60%;
       display: flex;
       flex-direction: column;
       gap: 1rem;
 
-      header {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-
-        h1 {
-          font-size: 2.2rem;
-          font-weight: 500;
-        }
+      h1 {
+        font-size: 2.2rem;
+        font-weight: 500;
       }
-
       p {
         font-size: 1rem;
         font-weight: 400;
         line-height: 150%;
       }
-      .rating {
-        padding: 3rem 0rem 1rem;
+      .space-between {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        h2 {
+          font-size: 1.75rem;
+          font-weight: 400;
+        }
+        .rating {
+          padding: 3rem 0rem 1rem;
+        }
       }
       .action {
         display: flex;
@@ -64,6 +71,9 @@
         align-items: center;
         gap: 1.5rem;
 
+        button {
+          cursor: pointer;
+        }
         button:last-child {
           color: var(--dark-color);
           background-color: white;

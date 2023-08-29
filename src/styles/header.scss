@@ -10,6 +10,9 @@
   img {
     cursor: pointer;
   }
+  img:hover {
+    transform: translateY(-0.1rem);
+  }
   .search,
   .user {
     border-bottom: 0.5px solid var(--outline-color);
@@ -99,6 +102,7 @@
         padding: 0.3rem 0.6rem;
         background-color: black;
         border-radius: 100%;
+        z-index: 6;
       }
     }
   }

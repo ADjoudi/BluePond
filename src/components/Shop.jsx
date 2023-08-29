@@ -3,9 +3,7 @@ import { useState } from "react";
 import SideNav from "./SideNav.jsx";
 import Header from "./Header";
 import Cart from "./Cart";
-import Landing from "./Landing.jsx";
-import placeholder from "../assets/placeholder.png";
-
+import { Outlet } from "react-router-dom";
 import info from "./data";
 
 function Shop() {
@@ -23,7 +21,6 @@ function Shop() {
 
   const handleRemoveFromCart = (event) => {
     const id = event.currentTarget.getAttribute("id");
-    console.log("fired ", id);
     setCartList((prevCartList) => {
       return prevCartList.filter((item) => item.id !== id);
     });
@@ -76,11 +73,9 @@ function Shop() {
           decrement={decrement}
         />
       )}
-      <Landing
-        cartList={cartList}
-        items={info}
-        handleAddToCart={handleAddToCart}
-        handleRemoveFromCart={handleRemoveFromCart}
+
+      <Outlet
+        context={{ cartList, info, handleAddToCart, handleRemoveFromCart }}
       />
     </div>
   );
