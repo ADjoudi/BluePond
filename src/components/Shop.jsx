@@ -2,7 +2,7 @@ import "../styles/Shop.scss";
 import { useState } from "react";
 import SideNav from "./SideNav.jsx";
 import Header from "./Header";
-import Cart from "./Cart";
+import CartWindow from "./Cart";
 import { Outlet } from "react-router-dom";
 import info from "./data";
 
@@ -65,7 +65,7 @@ function Shop() {
         handleCartClick={() => setToggleCart(true)}
       />
       {toggleCart && (
-        <Cart
+        <CartWindow
           handleExitClick={() => setToggleCart(false)}
           list={cartList}
           handleRemoveFromCart={handleRemoveFromCart}
@@ -75,7 +75,14 @@ function Shop() {
       )}
 
       <Outlet
-        context={{ cartList, info, handleAddToCart, handleRemoveFromCart }}
+        context={{
+          cartList,
+          info,
+          handleAddToCart,
+          handleRemoveFromCart,
+          increment,
+          decrement,
+        }}
       />
     </div>
   );
