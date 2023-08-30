@@ -5,9 +5,15 @@ import bookmark from "../assets/bookmark.svg";
 import starFilled from "../assets/star-filled.svg";
 import starHalfFilled from "../assets/star-half-filled.svg";
 import starEmpty from "../assets/star-empty.svg";
-import { Link, useParams, useOutletContext } from "react-router-dom";
+import {
+  Link,
+  useParams,
+  useOutletContext,
+  useNavigate,
+} from "react-router-dom";
 
 function Product() {
+  const navigate = useNavigate();
   const { productId } = useParams();
   const { info, handleAddToCart, handleRemoveFromCart } = useOutletContext();
   const { id, productName, productImage, description, price } = info.find(
@@ -38,7 +44,15 @@ function Product() {
             <h2>${price}</h2>
           </div>
           <div className="action">
-            <button>Buy Now</button>
+            <button
+              onClick={(e) => {
+                handleAddToCart(e);
+                navigate("/shop/checkout");
+              }}
+              id={id}
+            >
+              Buy Now
+            </button>
             <button onClick={handleAddToCart} id={id}>
               Add to Cart
             </button>
