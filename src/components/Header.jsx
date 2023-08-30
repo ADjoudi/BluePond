@@ -14,10 +14,12 @@ export default function Header({ isShop, nbrItems, handleCartClick }) {
         <h1>
           <Link to="/shop">Shop</Link>
         </h1>
-        <h1>Hot</h1>
-        <h1>New</h1>
-        <h1>Essentials</h1>
-        <h1>Accessories</h1>
+        <div className="categories">
+          <h1>Hot</h1>
+          <h1>New</h1>
+          <h1>Essentials</h1>
+          <h1>Accessories</h1>
+        </div>
       </div>
       <div className="language">
         <h1>English</h1>

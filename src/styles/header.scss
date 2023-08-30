@@ -11,7 +11,10 @@
     cursor: pointer;
   }
   img:hover {
-    transform: translateY(-0.1rem);
+    transform: translateY(-0.05rem);
+  }
+  img:active {
+    transform: scale(1.01);
   }
   .search,
   .user {
@@ -30,14 +33,24 @@
 
     h1:nth-child(2) {
       margin-right: auto;
-      text-decoration: none;
     }
     h1 {
       font-weight: 500;
       font-size: 1rem;
     }
+    h1:active {
+      transform: scale(1.01);
+    }
+    a:active {
+      transform: scale(1.01);
+    }
     a {
       text-decoration: none;
+    }
+    .categories {
+      display: flex;
+      flex-direction: row;
+      gap: 2.5rem;
     }
   }
 
