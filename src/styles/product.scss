@@ -1,5 +1,5 @@
 .showcase {
-  padding: 2rem 0rem 2rem 2rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
@@ -79,5 +79,24 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 88rem) {
+  .showcase .item {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 74rem) {
+  .showcase .item {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .showcase .item .productInfo {
+    width: 95%;
+  }
+  .showcase .item #productImageShowcase {
+    width: 95%;
   }
 }

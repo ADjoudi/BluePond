@@ -28,7 +28,6 @@ export default function Header({
       {isShop && (
         <>
           <div className="search">
-            <input type="text" placeholder="Search" />
             <img src={search} alt="search" />
           </div>
           <div className="user">
