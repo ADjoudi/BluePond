@@ -87,6 +87,12 @@
     width: 90%;
   }
 }
+@media screen and (max-width: 45rem) {
+  .showcase .item .productInfo .action button {
+    width: 100%;
+    text-align: center;
+  }
+}
 @media screen and (max-width: 74rem) {
   .showcase .item {
     flex-direction: column;
