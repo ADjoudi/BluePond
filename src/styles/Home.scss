@@ -49,3 +49,8 @@
     font-size: 3rem;
   }
 }
+@media screen and (max-height: 1224px) and (max-width: 1596px) {
+  .content-landing img {
+    bottom: -30vh;
+  }
+}
