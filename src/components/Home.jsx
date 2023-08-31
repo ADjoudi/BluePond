@@ -45,8 +45,8 @@ function Home() {
           sophistication{"\n"}
           Elevate your style with our exquisite offerings
         </h2>
-        <Link className="link" to="/shop">
-          View Collection
+        <Link to="/shop">
+          <button className="link">View Collection</button>
         </Link>
         <img src={heroImage} alt="" />
       </div>
