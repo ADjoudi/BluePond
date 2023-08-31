@@ -1,5 +1,5 @@
 import "../styles/Shop.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SideNav from "./SideNav.jsx";
 import Header from "./Header";
 import CartWindow from "./Cart";
@@ -9,6 +9,7 @@ import info from "./data";
 function Shop() {
   const [toggleCart, setToggleCart] = useState(false);
   const [cartList, setCartList] = useState([]);
+  const [width, setWidth] = useState(window.innerWidth / 16);
 
   const handleAddToCart = (event) => {
     const id = event.currentTarget.getAttribute("id");
@@ -56,10 +57,22 @@ function Shop() {
       );
     });
   };
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWidth(window.innerWidth / 16);
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
   return (
     <div className="page">
-      <SideNav title="shop" />
+      <SideNav windowWidth={width} title="shop" />
       <Header
+        windowWidth={width}
         isShop={true}
         nbrItems={cartList.length}
         handleCartClick={() => setToggleCart(true)}

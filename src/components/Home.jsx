@@ -3,9 +3,11 @@ import Header from "./Header";
 import SideNav from "./SideNav";
 import heroImage from "../assets/hero-image.jpg";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function Home() {
+  const [width, setWidth] = useState(window.innerWidth / 16);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       document
@@ -16,10 +18,21 @@ function Home() {
       clearTimeout(timer);
     };
   });
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWidth(window.innerWidth / 16);
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
   return (
     <div className="page">
-      <SideNav title="home" />
-      <Header isShop={false} />
+      <SideNav windowWidth={width} title="home" />
+      <Header windowWidth={width} isShop={false} />
       <div className="content-landing">
         <h1 className={"hero-title" + " " + "hero-title-load"}>
           Elevate Your Lifestyle{"\n"}

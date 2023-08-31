@@ -1,9 +1,8 @@
 .cartWindow {
   position: fixed;
   height: calc(100% - 3.4375rem);
-  width: calc(100% - 5.5625rem);
+  width: calc(100%);
   margin-top: 3.4375rem;
-  margin-left: 5.5625rem;
   display: flex;
   flex-direction: row;
   z-index: 10;
@@ -15,7 +14,7 @@
   }
   .cart {
     position: sticky;
-    width: 18.625rem;
+    min-width: 18.625rem;
     height: calc(100vh - 3.4375rem);
     display: flex;
     flex-direction: column;
@@ -25,7 +24,9 @@
     justify-content: flex-start;
     padding: 1rem 2rem;
     z-index: 100;
-
+    @media screen and (max-width: 757px) {
+      width: 90%;
+    }
     img,
     button {
       cursor: pointer;
