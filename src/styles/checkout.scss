@@ -116,3 +116,12 @@
     }
   }
 }
+
+@media screen and (max-width: 88rem) {
+  .checkout-page {
+    flex-direction: column;
+  }
+  .checkout-page .order-summary {
+    width: 100%;
+  }
+}
